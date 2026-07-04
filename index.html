@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JOHNY GALVIS | Photographer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Playfair+Display:wght@500;700&amp;family=Space+Grotesk:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#8e9192",
+                        "surface-tint": "#c9c6c5",
+                        "background": "#121414",
+                        "surface-container": "#1e2020",
+                        "on-secondary-container": "#342800",
+                        "on-tertiary-container": "#7a7979",
+                        "surface-container-lowest": "#0c0f0f",
+                        "surface-container-low": "#1a1c1c",
+                        "tertiary-fixed": "#e4e2e1",
+                        "outline-variant": "#444748",
+                        "primary-fixed": "#e5e2e1",
+                        "on-surface-variant": "#c4c7c7",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "on-surface": "#e2e2e2",
+                        "on-primary-fixed-variant": "#474646",
+                        "primary-container": "#0a0a0a",
+                        "on-error": "#690005",
+                        "error": "#ffb4ab",
+                        "inverse-primary": "#5f5e5e",
+                        "surface-bright": "#38393a",
+                        "surface": "#121414",
+                        "secondary-container": "#af8d11",
+                        "on-primary-fixed": "#1c1b1b",
+                        "surface-dim": "#121414",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e2e2e2",
+                        "surface-container-high": "#282a2b",
+                        "inverse-surface": "#e2e2e2",
+                        "on-secondary-fixed": "#241a00",
+                        "primary": "#c9c6c5",
+                        "on-primary-container": "#7b7979",
+                        "surface-variant": "#333535",
+                        "tertiary-container": "#0a0a0a",
+                        "error-container": "#93000a",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-tertiary": "#303030",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "secondary-fixed": "#ffe088",
+                        "secondary": "#e9c349",
+                        "inverse-on-surface": "#2f3131",
+                        "surface-container-highest": "#333535",
+                        "on-primary": "#313030",
+                        "tertiary": "#c8c6c5",
+                        "on-secondary-fixed-variant": "#574500",
+                        "on-secondary": "#3c2f00",
+                        "secondary-fixed-dim": "#e9c349"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "section-gap": "160px",
+                        "gutter": "32px",
+                        "margin-mobile": "24px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-caps": ["Space Grotesk"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-sm": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "display-lg-mobile": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["42px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "display-lg": ["80px", { "lineHeight": "90px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom utilities based on style guidance */
+        .glass-overlay {
+            background-color: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .surface-level-1 {
+            background-color: #262626;
+            border: 1px solid rgba(233, 195, 73, 0.15); /* Muted Gold at 15% */
+        }
+        .soft-shadow {
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+        }
+        .image-card {
+            border-radius: 0;
+            overflow: hidden;
+            position: relative;
+        }
+        .image-card img {
+            transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .image-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid transparent;
+            transition: border-color 0.4s ease;
+            pointer-events: none;
+            z-index: 10;
+        }
+        .image-card:hover img {
+            transform: scale(1.05);
+        }
+        .image-card:hover::after {
+            border-color: rgba(233, 195, 73, 0.5); /* Muted Gold */
+        }
+        .btn-primary {
+            background-color: #ffffff;
+            color: #0A0A0A;
+            border-radius: 0;
+            transition: opacity 0.3s ease;
+        }
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid #262626;
+            border-radius: 0;
+            transition: border-color 0.3s ease;
+        }
+        .btn-secondary:hover {
+            border-color: #e9c349;
+        }
+        .minimal-input {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #262626;
+            border-radius: 0;
+            color: #e2e2e2;
+            padding: 12px 0;
+            transition: border-color 0.3s ease;
+        }
+        .minimal-input:focus {
+            outline: none;
+            border-bottom-color: #e9c349;
+            box-shadow: none;
+        }
+        
+        /* Smooth scroll margin for fixed nav */
+        html { scroll-padding-top: 100px; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 z-50 docked full-width bg-background dark:bg-background border-b border-outline-variant/30 dark:border-outline-variant/30 w-full transition-transform duration-300" id="main-nav">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-6 max-w-full mx-auto">
+<a class="font-headline-sm text-headline-sm font-medium tracking-tight text-on-surface dark:text-on-surface hover:opacity-80 transition-opacity" href="#">
+                JOHNY GALVIS
+            </a>
+<div class="hidden md:flex items-center space-x-8 border-l border-outline-variant/30 pl-8 ml-8 h-8">
+<a class="font-label-caps text-label-caps text-secondary dark:text-secondary border-b border-secondary pb-1 hover:text-primary transition-colors duration-300 cursor-pointer transition-opacity active:opacity-80" href="#portfolio">Portfolio</a>
+<a class="font-label-caps text-label-caps text-on-surface/70 dark:text-on-surface/70 hover:text-primary transition-colors duration-300 cursor-pointer transition-opacity active:opacity-80" href="#about">About</a>
+<a class="font-label-caps text-label-caps text-on-surface/70 dark:text-on-surface/70 hover:text-primary transition-colors duration-300 cursor-pointer transition-opacity active:opacity-80" href="#contact">Contact</a>
+</div>
+<!-- Mobile Menu Button -->
+<button class="md:hidden text-on-surface p-2" id="mobile-menu-btn">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<!-- Mobile Menu Overlay -->
+<div class="md:hidden hidden absolute top-full left-0 w-full glass-overlay border-b border-outline-variant/30" id="mobile-menu">
+<div class="flex flex-col py-8 px-margin-mobile space-y-6">
+<a class="font-label-caps text-label-caps text-secondary" href="#portfolio">Portfolio</a>
+<a class="font-label-caps text-label-caps text-on-surface/70" href="#about">About</a>
+<a class="font-label-caps text-label-caps text-on-surface/70" href="#contact">Contact</a>
+</div>
+</div>
+</header>
+<main class="pt-[100px]">
+<!-- Hero / Portfolio Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-gutter md:py-section-gap min-h-screen flex flex-col justify-center" id="portfolio">
+<div class="mb-16 md:mb-24 md:w-2/3">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-6">
+                    Cinematic clarity. <br/> Editorial precision.
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface/70 max-w-xl">
+                    A curated selection of high-end photography focusing on minimal compositions, striking light, and timeless narrative.
+                </p>
+</div>
+<!-- Asymmetrical Grid Gallery -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Image 1: Large Feature -->
+<div class="md:col-span-8 image-card h-[512px] md:h-[700px] group relative cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-700" data-alt="A cinematic, wide-angle professional photograph of a striking architectural interior." src="https://lh3.googleusercontent.com/aida-public/AB6AXuClIw7-YtYMgiYvtuigP1PjxFc_Ypq8h2W9QRTNfUBF__vCWVAa0Dwzp6Un5JzLx4zWAUt5fFLxg7rxpfIPsYqonUFDcHMzYZHnb9BOBEvhrN7Z2wPeWiB3Ol4RoKFHtdsDTun9Xg3nMJ4ojV2A-c4kTb7qQxr3SaXmedKA_Y9YTux2VMASiJGAWROEqnhnMyLyBxRK2Jd2DcaHmFVSjY2eoE27lP26EkucDLKUnEki7SukVKZTwGNo4FbPN1pF1ctw-UIuwZLQJab9"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 z-0">
+<span class="font-label-caps text-label-caps text-secondary mb-2 tracking-widest">ARCHITECTURE</span>
+<h3 class="font-headline-sm text-headline-sm text-white">Concrete Shadows</h3>
+</div>
+</div>
+<!-- Image 2 & 3: Vertical Stack -->
+<div class="md:col-span-4 flex flex-col gap-gutter h-auto md:h-[700px]">
+<div class="image-card h-[400px] md:h-1/2 group relative cursor-pointer">
+<img class="w-full h-full object-cover object-top transition-transform duration-700" data-alt="A close-up, high-fashion portrait shot in black and white." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxLtgE38sfJ-uQ1wTpO246gz33us2I-jVkWuleg2ME7aRiyIGAV2OtxelHhUepwBCZPZWidqZYgJtWv3R6vXy6C0LU9tkdByWM4wXKtpq_MXJsGQa5JJKbhkTmlCEK0fILzFb5martxJfPN6zsMfuJw0yuZWt24l0XZ8jydSI359xJyWfQjY70Qr8VOK1ejrfL7ks16oxyKuKfeLAggu6YRGugftW08ExzJodSr3Q-bCDzqU7FYnutLNFxwyY5VyDpvJ_m_v0E8AUX"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 z-0">
+<span class="font-label-caps text-label-caps text-secondary mb-2 tracking-widest">PORTRAIT</span>
+<h3 class="font-headline-sm text-white text-xl">The Void</h3>
+</div>
+</div>
+<div class="image-card h-[400px] md:h-1/2 group relative cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-700" data-alt="An abstract, minimalist landscape photography piece." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmb2HTxgyABP-t02QkqUZVZc3V-eOqdcCaaeylIGxv3mhigqdJc6P4P8SKokaDz7jTSKKRCBStAy4E_92fdwhzTjTCKpxpMuZQO-42V9OHCJG1Ja--w9m5tTVFbqiBe05qY0IZGtzr1l5JbiPaWQj6qAB8p8HIdeyuMHlL4lTqN3x3LDM2G8SpXVQU_O03JzBuX6AzNevNNu0NlipFBR2RAqFa3Sr6pSWXVgd8E6zh0zj1DrMYZsYGcB2ZHSIf27QnAl-kV7OZb8lK"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 z-0">
+<span class="font-label-caps text-label-caps text-secondary mb-2 tracking-widest">LANDSCAPE</span>
+<h3 class="font-headline-sm text-white text-xl">Silent Horizon</h3>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mt-gutter">
+<!-- Image 4: Tall Portrait -->
+<div class="md:col-span-4 image-card h-[500px] md:h-[700px] group relative cursor-pointer">
+<img alt="Editorial Fashion" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyzbA1T0Gr-LQpk0OrRnQnn59Lc7fZy_AJ9neU3lt7CNFWzvNV5A2BWKpDTfkKcpQYvhgtyLzo3PiuVsfo9mFXA9sev4oiz-TV3ox7O-uNBOZaIB8LdiPJEnZ9-Vfm-vfJ0HjAONl8ZvHMGtjnEUPCOUhShroKQIIq7Mgk-i_lMTT9VzpOsWbCokNLUg634-KPmgrVkXJOZwPSrlWp_Ki0SXCzxm59QQFGpsjwpij0Xr6I_SDNKRdkzjozdA-htkRxGifUu6ZLQ0ue"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 z-0">
+<span class="font-label-caps text-label-caps text-secondary mb-2 tracking-widest">EDITORIAL</span>
+<h3 class="font-headline-sm text-white text-xl">Structured Light</h3>
+</div>
+</div>
+<!-- Image 5 & 6: Stacked Horizontal / Grid -->
+<div class="md:col-span-8 flex flex-col gap-gutter h-auto md:h-[700px]">
+<div class="image-card h-[400px] md:h-3/5 group relative cursor-pointer">
+<img alt="High Fashion" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATBugvmO4_s5JZcKSuR7HOXPc7ziSCeE0zV67hp85Pqr9GRJQH28-8oyl7O45alwEEDbLMuaUBq-HFhOgSGIc3nfDNXwYnoVpG1VRY0QThxoiMiQbotOxW9NlcRcd_Xg4-naDuXnyKkKSzh5RSNOD1Xx7NVfMvgg4x8uBTd3cNHdsCJkjZybvLd17bJ9U9grqsIAFelrtz0ebmr6d_4_ZenI5JVh11BEOG1JLyO299y8xKOQS3I9EriPR_FoJrpdZeP9OQn6z17aEF"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 z-0">
+<span class="font-label-caps text-label-caps text-secondary mb-2 tracking-widest">FASHION</span>
+<h3 class="font-headline-sm text-headline-sm text-white">Midnight Campaign</h3>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter h-[400px] md:h-2/5">
+<div class="image-card group relative cursor-pointer h-full">
+<img alt="Still Life" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCLRfszJeqD202j5LFUFCo2vrE74tzN0x6YeDUoeRonuIQgE8PrMW4u_Er5GsBPpu5etZlz0hEdn_ykl0wimfQ90eLW2mp3K00YCGJ1yLFN6D4J_qqk0nDAF4fektSuorQC7_3UNT0av6cM3gbLOjKo6vmPU6OUIp0ygWRI_hk5X_ioEBC5xQFvQTD-H3rjEklF2GN695p8p5Pb3rAmnRgiVwFAzDauemi4MdvqSuKcM2MNzOjuPtCOEMimbIGGJQziKlpv43OotbK"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 z-0">
+<span class="font-label-caps text-label-caps text-secondary mb-2 tracking-widest">STILL LIFE</span>
+<h3 class="font-headline-sm text-white text-lg">Modernist Forms</h3>
+</div>
+</div>
+<div class="image-card group relative cursor-pointer h-full">
+<img alt="Conceptual" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_uHPvBIsKM7Hse_xG2EL-IWre0dPaXtEQAdkX7KHw6On5SJaewqE6eTP4QSwlcTgR38q6k85tcIRJFcv2F0VlC6FwHcwUNvSICHeNWDbB9ktJLexKZka89d2pXvUb9kvWQ-LI5Afdy0RxXnyriSbwAYJKfySbpXDK4cqzzyPE3yO2bGgdreqiB23pyo2Uqi5RCdjittTjOFe2j2FXAYyCM_WVq-PJjUr1Px6-IVSD73loyhAdLjUVq-XA252dkg3c1s5HHrhn7MS_"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 z-0">
+<span class="font-label-caps text-label-caps text-secondary mb-2 tracking-widest">CONCEPTUAL</span>
+<h3 class="font-headline-sm text-white text-lg">Minimal Study</h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Hidden "Load More" Gallery Section -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mt-gutter hidden opacity-0 transition-opacity duration-700" id="expanded-gallery">
+<div class="md:col-span-12 image-card h-[400px] md:h-[600px] group relative cursor-pointer">
+<img alt="Cityscape" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_TMDqUBR7aSuB8IkdwAnLiE2s2-sfQUuxDbTIk11asJ6789X7BeEQeeddiD8thvAA6-ucLY2pA6iPA3MZh5x27D9FaZAVGWYDeEPwkySFK97G9OoKhddFfXtMCh8slDllSC9K0vEcHka95ghPdodQrKZKtjE6oMxmY6Sk6CK1g7r8dtoWf-nmya_mwSzK2t4pqkOXUGWitQ7MHGdS7Tr91kX879iILAPeD2GXzpzHf4UgqRLtmhLIORexHTR8M4fzHVOVLrKeuvGa"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 z-0">
+<span class="font-label-caps text-label-caps text-secondary mb-2 tracking-widest">CITYSCAPE</span>
+<h3 class="font-headline-sm text-headline-sm text-white">Urban Geometry</h3>
+</div>
+</div>
+</div>
+<div class="mt-16 flex justify-center w-full">
+<button class="btn-secondary px-8 py-4 font-label-caps text-label-caps tracking-widest inline-flex items-center gap-2" id="load-more-btn">
+                    LOAD MORE
+                    <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</section>
+<!-- About Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-gap relative" id="about">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 order-2 md:order-1 image-card h-[614px] md:h-[716px]">
+<img class="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-700" data-alt="A professional, moody portrait of a male photographer (Johny Galvis) in his studio. He is dressed in minimal, dark clothing, leaning slightly against a neutral gray backdrop. Soft, directional light illuminates one side of his face, creating a cinematic, chiaroscuro effect. A vintage medium-format camera sits on a stand nearby. The image exudes quiet confidence and artistic authority." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDJ9Bz6ajFw3BuBV5e5Ln7bqI-1jARn0tMR-13W9mhWv7m4HjW6kqQeFqaA2nijBPqK6pappoqMIYdON60xOhHvaUlb76LRCB81MzaBjgSSgoVRompwsywXKaCJQ1KLf_EZptAA6O1NLhBusrYCABBze2QQbxel6QP9gfUwuMgwtXfsCYrmIPbU78w7N_7SiTQ8XlBEx5zBGBM0FgEmjTgiFkPvLeiu1ab6kZtHLgj27zbc7dc4tUUfjcakHay4deyMwoGqJKcV675"/>
+</div>
+<div class="md:col-span-6 md:col-start-7 order-1 md:order-2 mb-12 md:mb-0">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-8 relative inline-block">
+                        The Observer
+                        <span class="absolute -bottom-4 left-0 w-12 h-px bg-secondary"></span>
+</h2>
+<div class="space-y-6 text-on-surface/80 font-body-lg text-body-lg">
+<p>
+                            Johny Galvis is a contemporary photographer whose work bridges the gap between raw documentarian instinct and highly structured editorial design. Based between New York and Paris, his approach treats negative space as a primary subject.
+                        </p>
+<p>
+                            With a background in architectural design, every frame is meticulously composed to eliminate visual noise, allowing the core narrative—whether in fashion, portraiture, or conceptual landscapes—to resonate with absolute clarity.
+                        </p>
+</div>
+<div class="mt-12 pt-8 border-t border-outline-variant/30 flex gap-8">
+<div>
+<span class="block font-label-caps text-label-caps text-on-surface/50 mb-2">EXPERIENCE</span>
+<span class="font-headline-sm text-headline-sm">12+ Years</span>
+</div>
+<div>
+<span class="block font-label-caps text-label-caps text-on-surface/50 mb-2">PUBLICATIONS</span>
+<span class="font-headline-sm text-headline-sm">Vogue, GQ, Kinfolk</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer / Contact -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/30 py-unit-section-gap mt-section-gap relative overflow-hidden" id="contact">
+<div class="px-margin-mobile md:px-margin-desktop w-full mb-24 relative z-10 pt-24">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-section-gap">
+<!-- Contact Info -->
+<div>
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-12">
+                        Let's create.
+                    </h2>
+<div class="space-y-8">
+<div>
+<span class="block font-label-caps text-label-caps text-on-surface/50 mb-2">INQUIRIES</span>
+<a class="font-headline-sm text-headline-sm hover:text-secondary transition-colors inline-flex items-center gap-4" href="mailto:studio@johnygalvis.com">
+                                studio@johnygalvis.com
+                                <span class="material-symbols-outlined">north_east</span>
+</a>
+</div>
+<div>
+<span class="block font-label-caps text-label-caps text-on-surface/50 mb-2">REPRESENTATION</span>
+<p class="font-body-lg text-body-lg">Art + Commerce Agency<br/>New York, NY</p>
+</div>
+</div>
+</div>
+<!-- Minimal Form -->
+<div class="surface-level-1 p-8 md:p-12 h-fit">
+<form class="space-y-8">
+<div>
+<input class="w-full minimal-input font-body-md" placeholder="Name" required="" type="text"/>
+</div>
+<div>
+<input class="w-full minimal-input font-body-md" placeholder="Email Address" required="" type="email"/>
+</div>
+<div>
+<textarea class="w-full minimal-input font-body-md resize-none" placeholder="Project Details" required="" rows="4"></textarea>
+</div>
+<button class="btn-primary w-full py-4 font-label-caps text-label-caps tracking-widest mt-4" type="submit">
+                            SEND MESSAGE
+                        </button>
+</form>
+</div>
+</div>
+</div>
+<!-- Shared Component Footer Bottom -->
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop w-full py-8 border-t border-outline-variant/30 relative z-10">
+<div class="font-headline-sm text-headline-sm text-on-surface mb-6 md:mb-0">
+                JOHNY GALVIS
+            </div>
+<div class="flex gap-8 mb-6 md:mb-0">
+<a class="font-label-caps text-label-caps text-on-tertiary-container dark:text-on-tertiary-container hover:text-secondary transition-all duration-300 underline-offset-4 hover:underline" href="#">Instagram</a>
+<a class="font-label-caps text-label-caps text-on-tertiary-container dark:text-on-tertiary-container hover:text-secondary transition-all duration-300 underline-offset-4 hover:underline" href="#">LinkedIn</a>
+<a class="font-label-caps text-label-caps text-on-tertiary-container dark:text-on-tertiary-container hover:text-secondary transition-all duration-300 underline-offset-4 hover:underline" href="#">Email</a>
+</div>
+<div class="font-label-caps text-label-caps text-on-tertiary-container dark:text-on-tertiary-container text-center md:text-right">
+                © 2024 JOHNY GALVIS. ALL RIGHTS RESERVED.
+            </div>
+</div>
+</footer>
+<script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Hide Nav on scroll down, show on scroll up (Minimalist interaction)
+        let lastScrollTop = 0;
+        const nav = document.getElementById('main-nav');
+        
+        window.addEventListener('scroll', () => {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                // Scroll down
+                nav.style.transform = 'translateY(-100%)';
+            } else {
+                // Scroll up
+                nav.style.transform = 'translateY(0)';
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        }, false);
+        
+        // Load More Gallery Logic
+        const loadMoreBtn = document.getElementById('load-more-btn');
+        const expandedGallery = document.getElementById('expanded-gallery');
+        
+        if (loadMoreBtn && expandedGallery) {
+            loadMoreBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                expandedGallery.classList.remove('hidden');
+                // Small delay to allow display:block to apply before animating opacity
+                setTimeout(() => {
+                    expandedGallery.classList.remove('opacity-0');
+                }, 50);
+                loadMoreBtn.style.display = 'none';
+            });
+        }
+    </script>
+</body></html>
